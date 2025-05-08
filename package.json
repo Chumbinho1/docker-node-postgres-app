@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "migrate": "node-pg-migrate up",
-    "migrate-down": "node-pg-migrate down"
+    "migrate-down": "node-pg-migrate down",
+    "migrate-create": "node-pg-migrate create"
   },
   "dependencies": {
     "dotenv": "^16.5.0",

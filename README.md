@@ -1,0 +1,55 @@
+# Docker Node.js and PostgreSQL App
+
+This project was created as a learning exercise to study and improve my Docker skills. It demonstrates how to containerize a Node.js application with a PostgreSQL database using Docker.
+
+## Features
+
+- Node.js backend
+- PostgreSQL database
+- Dockerized environment with `docker-compose`
+
+## Prerequisites
+
+- Docker
+- Docker Compose
+
+## Getting Started
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/docker-node-postgres-app.git
+
+    # Enter in the app folder
+    cd docker-node-postgres-app
+    ```
+
+2. Start the containers:
+    ```bash
+    docker-compose up
+    ```
+3. Install Node.js dependencies:
+    ```bash
+    docker-compose exec app npm install
+    ```
+
+4. Run database migrations:
+    ```bash
+    docker-compose exec app npm run migrate
+    ```
+
+5. Start the application:
+    ```bash
+    docker-compose exec app npm start
+    ```
+
+6. Access the application:
+    - The Node.js app will be running at `http://localhost:3000`
+    - PostgreSQL will be accessible on port `5432`
+
+## Purpose
+
+This project was built to practice:
+
+- Setting up multi-container Docker environments.
+- Managing containerized applications with Docker Compose.
+- Integrating Node.js with PostgreSQL in a Dockerized setup.
