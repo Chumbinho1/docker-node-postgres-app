@@ -1,0 +1,42 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: ../../
+      dockerfile: docker/production/Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    networks:
+      - app-network
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+    user: "${WWWUSER}:${WWWGROUP}"
+    restart: always
+
+  db:
+    container_name: db
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+    restart: always
+
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
+

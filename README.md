@@ -46,10 +46,29 @@ This project was created as a learning exercise to study and improve my Docker s
     - The Node.js app will be running at `http://localhost:3000`
     - PostgreSQL will be accessible on port `5432`
 
+---
+
+## Running in Production
+
+1.  Build and start the production containers:
+    ```bash
+    docker compose -f docker/production/docker-compose.production.yml --env-file .env.production up --build -d
+    ```
+
+2. Run database migrations:
+    ```bash
+    docker exec -it app npm run migrate
+    ```
+
+3. Access the application:
+   - The Node.js app will be running at `http://localhost:3000`
+   - PostgreSQL will be accessible on port `5432`
+
 ## Purpose
 
-This project was built to practice:
+This project was created to practice and demonstrate:
 
-- Setting up multi-container Docker environments.
-- Managing containerized applications with Docker Compose.
-- Integrating Node.js with PostgreSQL in a Dockerized setup.
+- Building multi-container Docker environments  
+- Managing applications with Docker Compose  
+- Integrating a Node.js backend with a PostgreSQL database in a containerized setup  
+- Using environment variables and production-ready Docker configurations
