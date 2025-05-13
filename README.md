@@ -61,14 +61,14 @@ This project was created as a learning exercise to study and improve my Docker s
     ```
 
 3. Access the application:
-   - The Node.js app will be running at `http://localhost:3000`
+   - The nginx will be serving Node.js application at `http://localhost`
    - PostgreSQL will be accessible on port `5432`
 
 ## Purpose
 
-This project was created to practice and demonstrate:
+This project serves as a hands-on example to:
 
-- Building multi-container Docker environments  
-- Managing applications with Docker Compose  
-- Integrating a Node.js backend with a PostgreSQL database in a containerized setup  
-- Using environment variables and production-ready Docker configurations
+- Create and manage multi-container Docker setups  
+- Orchestrate services using Docker Compose  
+- Connect a Node.js backend with a PostgreSQL database in containers  
+- Apply environment variables and production-ready Docker best practices
